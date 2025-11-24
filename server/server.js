@@ -13,12 +13,7 @@ const db = require("./config/connection");
 db.connect();
 
 //middlewares
-app.use(
-  cors({
-    origin: "https://loquacious-palmier-d06bf4.netlify.app",
-    credentials: true,
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
