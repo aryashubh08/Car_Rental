@@ -5,7 +5,7 @@ import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const baseURL = import.meta.env.VITE_BASE_URL;
+axios.defaults.baseURL = import.meta.env.VITE_BASE_URL;
 
 export const AppContext = createContext();
 
@@ -22,7 +22,7 @@ export const AppProvider = ({ children }) => {
   //function to check if user is logged in
   const fetchUser = async () => {
     try {
-      const { data } = await axios.get(`${baseURL}/api/v1/user/data`);
+      const { data } = await axios.get("/api/v1/user/data");
       if (data.success) {
         setUser(data.user);
         setIsOwner(data.user.role === "owner");

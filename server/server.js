@@ -13,11 +13,7 @@ const db = require("./config/connection");
 db.connect();
 
 //middlewares
-app.use(
-  cors({
-    origin: ["https://car-rental-blond-ten.vercel.app"],
-  })
-);
+app.use(cors());
 
 app.use(express.json());
 
