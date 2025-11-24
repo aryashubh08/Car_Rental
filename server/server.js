@@ -15,7 +15,7 @@ db.connect();
 //middlewares
 app.use(
   cors({
-    origin: "https://car-rental-blond-ten.vercel.app/",
+    origin: "https://car-rental-blond-ten.vercel.app",
     credentials: true,
   })
 );
