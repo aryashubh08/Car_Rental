@@ -20,6 +20,10 @@ app.use("/api/v1/user", userRouter);
 app.use("/api/v1/owner", ownerRouter);
 app.use("/api/v1/bookings", bookingRouter);
 
+app.get("/", (req, res) => {
+  res.send("API is running");
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
