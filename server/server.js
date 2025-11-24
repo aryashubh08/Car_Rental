@@ -13,7 +13,13 @@ const db = require("./config/connection");
 db.connect();
 
 //middlewares
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://your-frontend.vercel.app",
+    credentials: true,
+  })
+);
+
 app.use(express.json());
 
 app.use("/api/v1/user", userRouter);
