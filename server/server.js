@@ -20,6 +20,6 @@ app.use("/api/v1/user", userRouter);
 app.use("/api/v1/owner", ownerRouter);
 app.use("/api/v1/bookings", bookingRouter);
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
+// app.listen(PORT, () => {
+//   console.log(`Server running on port ${PORT}`);
+// });
