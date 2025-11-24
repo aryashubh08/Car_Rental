@@ -34,11 +34,16 @@ const Cars = () => {
   };
 
   const searchCarAvailability = async () => {
-    const { data } = await axios.post("/api/v1/bookings/check-availability", {
-      location: pickupLocation,
-      pickupDate,
-      returnDate,
-    });
+    const { data } = await axios.post(
+      `${
+        import.meta.env.VITE_BACKEND_URL
+      }/api/v1/user/bookings/check-availability`,
+      {
+        location: pickupLocation,
+        pickupDate,
+        returnDate,
+      }
+    );
     if (data.success) {
       setFilterCars(data.availableCars);
       if (data.availableCars.length === 0) {
