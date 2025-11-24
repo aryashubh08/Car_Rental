@@ -15,7 +15,7 @@ db.connect();
 //middlewares
 app.use(
   cors({
-    origin: "https://your-frontend.vercel.app",
+    origin: "http://localhost:5173",
     credentials: true,
   })
 );
